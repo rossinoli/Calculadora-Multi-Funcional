@@ -27,3 +27,12 @@ O aplicativo é organizado utilizando uma navegação por abas para facilitar o 
 * HTML
 * SCSS 
 * Capacitor (para funcionalidades nativas, se aplicável)
+
+
+## Instalação e Execução
+
+Para executar o projeto, é necessário ter o Ionic e o Angular instalados no seu computador. Além disso, é necessário ter o Node.js e o npm instalados.
+
+1.  Clone o repositório do projeto.
+2.  Execute o comando `npm install` para instalar as dependências do projeto.
+3.  Execute o comando `ionic serve` para executar o projeto.
