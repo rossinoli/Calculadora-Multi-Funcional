@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Calculadora Simples</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <!-- Display -->
+  <ion-item lines="none" class="display-item">
+     <ion-input type="text" readonly class="display-input" [(ngModel)]="displayValue"></ion-input>
+  </ion-item>
+
+  <!-- Botões -->
+  <ion-grid>
+    <ion-row>
+      <ion-col><ion-button expand="block" color="light" (click)="clear()">C</ion-button></ion-col>
+      <ion-col><ion-button expand="block" color="light" (click)="appendOperator('/')">/</ion-button></ion-col>
+      <ion-col><ion-button expand="block" color="light" (click)="appendOperator('*')">*</ion-button></ion-col>
+       <ion-col><ion-button expand="block" color="light" (click)="appendOperator('-')">-</ion-button></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col><ion-button expand="block" (click)="appendNumber('7')">7</ion-button></ion-col>
+      <ion-col><ion-button expand="block" (click)="appendNumber('8')">8</ion-button></ion-col>
+      <ion-col><ion-button expand="block" (click)="appendNumber('9')">9</ion-button></ion-col>
+      <ion-col><ion-button expand="block" color="light" (click)="appendOperator('+')" class="tall-button" style="height: 110px;">+</ion-button></ion-col> <!-- Botão + mais alto -->
+    </ion-row>
+     <ion-row>
+      <ion-col><ion-button expand="block" (click)="appendNumber('4')">4</ion-button></ion-col>
+      <ion-col><ion-button expand="block" (click)="appendNumber('5')">5</ion-button></ion-col>
+      <ion-col><ion-button expand="block" (click)="appendNumber('6')">6</ion-button></ion-col>
+     </ion-row>
+     <ion-row>
+       <ion-col><ion-button expand="block" (click)="appendNumber('1')">1</ion-button></ion-col>
+       <ion-col><ion-button expand="block" (click)="appendNumber('2')">2</ion-button></ion-col>
+       <ion-col><ion-button expand="block" (click)="appendNumber('3')">3</ion-button></ion-col>
+        <ion-col><ion-button expand="block" color="secondary" (click)="calculate()" class="tall-button" style="height: 110px;">=</ion-button></ion-col> <!-- Botão = mais alto -->
+     </ion-row>
+     <ion-row>
+       <ion-col size="6"><ion-button expand="block" (click)="appendNumber('0')">0</ion-button></ion-col>
+       <ion-col size="3"><ion-button expand="block" (click)="appendDecimal()">.</ion-button></ion-col>
+     </ion-row>
+  </ion-grid>
+</ion-content>

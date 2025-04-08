@@ -1,0 +1,17 @@
+.result {
+    text-align: center;
+    background-color: var(--ion-color-light, #f4f4f4);
+    border-radius: 5px;
+    padding: 15px;
+}
+
+.classification-underweight { color: var(--ion-color-warning, orange); }
+.classification-normal { color: var(--ion-color-success, green); }
+.classification-overweight { color: var(--ion-color-warning, orange); }
+.classification-obese1,
+.classification-obese2,
+.classification-obese3 { color: var(--ion-color-danger, red); }
+
+.result p {
+   margin: 5px 0;
+}

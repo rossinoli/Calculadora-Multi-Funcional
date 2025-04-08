@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Conversor de Moeda</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-item>
+    <ion-label position="floating">Valor a Converter</ion-label>
+    <ion-input type="number" [(ngModel)]="amount" (ionInput)="convert()"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>De:</ion-label>
+    <ion-select [(ngModel)]="fromCurrency" (ionChange)="convert()">
+      <ion-select-option *ngFor="let currency of currencies" [value]="currency.code">
+        {{ currency.code }} - {{ currency.name }}
+      </ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Para:</ion-label>
+    <ion-select [(ngModel)]="toCurrency" (ionChange)="convert()">
+      <ion-select-option *ngFor="let currency of currencies" [value]="currency.code">
+        {{ currency.code }} - {{ currency.name }}
+      </ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <div *ngIf="convertedAmount !== null" class="result ion-padding">
+    <strong>Resultado:</strong> {{ convertedAmount | number:'1.2-2' }} {{ toCurrency }}
+  </div>
+
+  <!-- Comentário: Em uma versão com API, adicionaríamos um botão de atualização aqui -->
+  <!--
+  <ion-button expand="block" (click)="fetchRates()">
+    Atualizar Taxas (Exemplo API)
+  </ion-button>
+  -->
+   <p class="ion-padding-start ion-padding-end note">
+     <small>Taxas de câmbio estáticas (exemplo). Base: 1 USD.</small>
+   </p>
+
+</ion-content>

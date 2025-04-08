@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Conversor de Temperatura</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-item>
+    <ion-label position="floating">Valor</ion-label>
+    <ion-input type="number" [(ngModel)]="inputValue" (ionInput)="convert()"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>De:</ion-label>
+    <ion-select [(ngModel)]="fromUnit" (ionChange)="convert()">
+      <ion-select-option value="C">Celsius (°C)</ion-select-option>
+      <ion-select-option value="F">Fahrenheit (°F)</ion-select-option>
+      <ion-select-option value="K">Kelvin (K)</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Para:</ion-label>
+    <ion-select [(ngModel)]="toUnit" (ionChange)="convert()">
+       <ion-select-option value="C">Celsius (°C)</ion-select-option>
+       <ion-select-option value="F">Fahrenheit (°F)</ion-select-option>
+       <ion-select-option value="K">Kelvin (K)</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <div *ngIf="result !== null" class="result ion-padding ion-margin-top">
+    <strong>Resultado:</strong> {{ result | number:'1.2-2' }} °{{ toUnit }}
+  </div>
+</ion-content>

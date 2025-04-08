@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Juros Simples</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-item>
+    <ion-label position="floating">Capital Inicial (P)</ion-label>
+    <ion-input type="number" min="0" placeholder="Ex: 1000" [(ngModel)]="principal"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Taxa de Juros (i)</ion-label>
+    <ion-input type="number" min="0" placeholder="Ex: 1.5" [(ngModel)]="rate"></ion-input>
+  </ion-item>
+  <ion-item lines="none">
+     <ion-label>Período da Taxa</ion-label>
+    <ion-select [(ngModel)]="ratePeriod">
+      <ion-select-option value="month">Ao Mês (%)</ion-select-option>
+      <ion-select-option value="year">Ao Ano (%)</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+
+  <ion-item>
+    <ion-label position="floating">Tempo (n)</ion-label>
+    <ion-input type="number" min="0" placeholder="Ex: 12" [(ngModel)]="time"></ion-input>
+  </ion-item>
+   <ion-item lines="none">
+      <ion-label>Período do Tempo</ion-label>
+    <ion-select [(ngModel)]="timePeriod">
+      <ion-select-option value="months">Meses</ion-select-option>
+      <ion-select-option value="years">Anos</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-button expand="block" (click)="calculateInterest()" [disabled]="!principal || principal <= 0 || !rate || rate < 0 || !time || time <= 0" class="ion-margin-top">
+    Calcular Juros
+  </ion-button>
+
+  <div *ngIf="interest !== null && totalAmount !== null" class="result ion-padding ion-margin-top">
+    <p><strong>Juros (J):</strong> R$ {{ interest | number:'1.2-2' }}</p>
+    <p><strong>Montante Final (M):</strong> R$ {{ totalAmount | number:'1.2-2' }}</p>
+  </div>
+</ion-content>
