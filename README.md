@@ -19,3 +19,11 @@ O aplicativo é organizado utilizando uma navegação por abas para facilitar o 
 * Aba 4: Conversor de Temperatura
 * Aba 5: Calculadora de Juros Simples
 
+
+## Tecnologias Utilizadas
+* Ionic Framework
+* Angular
+* TypeScript
+* HTML
+* SCSS 
+* Capacitor (para funcionalidades nativas, se aplicável)
