@@ -36,3 +36,13 @@ Para executar o projeto, é necessário ter o Ionic e o Angular instalados no se
 1.  Clone o repositório do projeto.
 2.  Execute o comando `npm install` para instalar as dependências do projeto.
 3.  Execute o comando `ionic serve` para executar o projeto.
+
+
+### Autores
+* Thaina L. Rossinoli - Desenvolvedor.
+
+### Agradecimentos
+Gostaria de agradecer ao professor Everaldo pelo apoio e incentivo na criação deste projeto.
+
+### Licença
+Este projeto é licenciado sob a licença MIT.
